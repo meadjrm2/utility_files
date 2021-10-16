@@ -36,13 +36,17 @@ def dates():
     global day_short                     #Sunday                         <class 'str'>
     global now                           #2020-05-10 10:38:50.244205     <class 'datetime.datetime'>
     global time                          #10:38                          <class 'str'>
+    global time_now                      #(18, 35, 1, 543665)            <class 'datetime.time'>
+
+
     global ukdate_today                  #10 May                         <class 'str'>
     global ukdate                        #09 May 2020                    <class 'str'>
     global ukdate_slash                  #21/02/2020                     <class 'str'>
-    global weekno                        #07 May                         <class 'int'>  # Mon = 0, Tue = 1, Wed = 2, Thurs = 3, Fri - 4, Sat =5, Sun = 6
+    global weekno                        #07                             <class 'int'>  # Mon = 0, Tue = 1, Wed = 2, Thurs = 3, Fri - 4, Sat =5, Sun = 6
     global time_less_four_hours          #07:11:02                       <class 'str'>
     global hour_less_four_hours          #08                             <class 'str'>
     global hour                          #12                             <class 'str'>
+    global uk_day_date                   #Friday 07 June                 <class 'str'>'
     
     #YESTERDAY
     global yesterday                     #2020-05-09                     <class 'datetime.date'>
@@ -130,13 +134,13 @@ def dates():
     
     
     
-
     
     #nice formats
     from datetime import datetime, timedelta
     uk_yesterday_date_long = datetime.strptime(f'{yesterday}', "%Y-%m-%d").strftime("%d %B %Y")
     now = datetime.now()
     time = now.strftime("%H:%M")
+    time_now = datetime.now().time()
     hour = now.strftime("%H")
     time_less_four_hours = (datetime.now() - timedelta(hours = 4)).strftime('%H:%M:%S')
     hour_less_four_hours = (datetime.now() - timedelta(hours = 4)).strftime('%H')
@@ -148,6 +152,7 @@ def dates():
     uk_two_days_ago_date_long = datetime.strptime(f'{date_two_days_ago}', "%Y-%m-%d").strftime("%d %B %Y")
     uk_three_days_ago_date_long = datetime.strptime(f'{date_three_days_ago}', "%Y-%m-%d").strftime("%d %B %Y")
     uk_tomorrow_date_long = datetime.strptime(f'{tomorrow}', "%Y-%m-%d").strftime("%d %B %Y")
+    uk_day_date = datetime.strptime(f'{today}', "%Y-%m-%d").strftime("%a %d %B")
     
     #current month
     current_second= datetime.now().second
